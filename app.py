@@ -10,6 +10,7 @@ from scipy import stats
 import mpl_toolkits
 from datetime import datetime
 import seaborn as sn
+import os, time, sys
 
 from sklearn.ensemble import RandomForestRegressor
 from sklearn.datasets import make_regression
@@ -72,9 +73,6 @@ def user_input():
     return(user_input_prediction)
 
 
-
-
-
 def main():
     data = fetch_data()
     X_train, X_test, y_train, y_test = preprocessing(data)
@@ -94,10 +92,19 @@ def main():
             if(st.checkbox("Start a Search")):
                 user_input_prediction = user_input()
                 pred = regressor.predict(user_input_prediction)
-                st.write('The Predicted Home Price is: ', pred)
+                error = 94784
+                st.write('Mean Absolute Error: ', int(error))
+                st.write('The Predicted Home Price is: $', int(pred), u"\u00B1",int(error))
         except:
             pass
 
+    elif(ml_model == "Coming Soon"):
+        text = "Coming Soon..."
+        i=0
+        while i < len(text):
+            st.text(text[i])
+            time.sleep(0.1)
+            i += 1
 
         
 
