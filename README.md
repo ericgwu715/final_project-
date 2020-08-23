@@ -1,7 +1,11 @@
 # Predicting Home Prices in Seattle Metropolitan Area With Machine Learning
 
-### Project Team Name: Waka Waka
+## Project Team 
+
+Team Name: Waka Waka
 Members: Adil Ahmed | Eric Wu | Hannah Golledge | Hung Nguyen | Karen Galindo Choudhary | Monte Rodriguez 
+
+## Project Content
 
 Our Project Team are interested in understanding real estate market in Seattle Metropolitan Area, where there is a great concentration some of the world biggest tech companies like Amazon and Microsoft. We found the data on houses from Kaggle. Using Machine Learning, we analyzed and developed models that can predict house prices based on some selected features for houses in the area.
 
