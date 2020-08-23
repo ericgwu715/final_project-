@@ -1,4 +1,4 @@
-# Predicting Home Prices Seattle Metropolitan Area With Machine Learning
+# Predicting Home Prices in Seattle Metropolitan Area With Machine Learning
 
 ### Project Team Name: Waka Waka
 Members: Adil Ahmed | Eric Wu | Hannah Golledge | Hung Nguyen | Karen Galindo Choudhary | Monte Rodriguez 
