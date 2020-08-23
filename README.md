@@ -1,6 +1,4 @@
-# Final Project:
-
-## Topic: Predicting Seattle Metropolitan Area Home Prices With Machine Learning
+# Predicting Seattle Metropolitan Area Home Prices With Machine Learning
 
 ### Project Team Name: Waka Waka
 Members: Adil Ahmed | Eric Wu | Hannah Golledge | Hung Nguyen | Karen Galindo Choudhary | Monte Rodriguez 
