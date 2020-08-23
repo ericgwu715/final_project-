@@ -7,7 +7,7 @@ Our Project Team are interested in understanding real estate market in Seattle M
 
 Data Source: https://www.kaggle.com/shivachandel/kc-house-data
 
-Data set details: The dataset includes house data from King County in US State of Washington, which also covers Seattle Metropolitan Area. The dataset consists of  21 variables and 21613 observations, including historic data of houses sold between May 2014 to May 2015.
+Data set details: The dataset includes house data from King County in US State of Washington, which also covers Seattle Metropolitan Area. The dataset consists of  21 attributes and 21613 observations, including historic data of houses sold between May 2014 to May 2015.
 
 We developed the models using Multiple Linear Regression and Random Forest algorithms. 
 We aim to predict the sales of houses with an accuracy of at least 75-80% and understand which factors are responsible for higher property value.
