@@ -17,3 +17,7 @@ We aim to predict the sales of houses with an accuracy of at least 75-80% and un
 Project Website is hosted on GitHub at the below link
 
 https://hungnw.github.io/seattle-house-prediction.github.io/
+
+## Project Presentation
+
+<iframe src="https://docs.google.com/presentation/d/e/2PACX-1vRcLd-v-e37sOyKwUi57B0N1HBadHkwaxPx1gWlgo3iBKvMEovs87Y2KZivh1Xj9mhLUw003QGM7PUW/embed?start=false&loop=false&delayms=3000" frameborder="0" width="960" height="569" allowfullscreen="true" mozallowfullscreen="true" webkitallowfullscreen="true"></iframe>
