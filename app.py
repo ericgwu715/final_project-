@@ -21,9 +21,14 @@ from sklearn.metrics import accuracy_score
 
 st.title('Waka Waka Seattle Home Prices')
 
+from PIL import Image
+img = Image.open("seattle.jpg")
+st.image(img)
+
 st.write("""
 # Home Prices Predicted Using Machine Learning
 """)
+
 
 #read and display csv
 @st.cache 
@@ -50,6 +55,16 @@ def randomForest(X_train, X_test, y_train, y_test):
     score = r2_score(y_test, y_predict)*100
 
     return score ,regressor
+
+@st.cache(allow_output_mutation=True)
+def linearRegression(X_train, X_test, y_train, y_test):
+    model = LinearRegression()
+    model.fit(X_train,y_train)
+    y_predict = model.predict(X_test)
+    score = model.score(X_test, y_test)*100
+
+    return score ,y_predict
+
 
 #User input for the model
 def user_input():
@@ -79,36 +94,74 @@ def main():
 
     if st.checkbox("Show the Data We Used"):
         st.subheader("Home Sales From 2014 to 2015")
-        st.write(data.head())
+        st.write(data.head(200))
 
-    ml_model = st.sidebar.selectbox("Choose a Model to Predict Home Prices", ["Random Forest", "Coming Soon"])
+    st.sidebar.header("Menu")
+    st.sidebar.selectbox("Choose a City", ["Seattle"])
+    ml_model = st.sidebar.selectbox("Choose a Model to Predict Home Prices", ["Random Forest Regressor","Mutilple Linear Regression","Coming Soon"])
 
-    if(ml_model == "Random Forest"):
+    if(ml_model == "Random Forest Regressor"):
         score, regressor= randomForest(X_train, X_test, y_train, y_test)
-        st.text("Accuracy of Random Forest model is: ")
-        st.write(round(score,2),"%")
+        txt = "Accuracy of Random Forest Model is: " + str(round(score,2)) + "%" 
+        if(st.checkbox("Show Model Accuracy")):
+            st.success(txt)
+        
 
         try:
             if(st.checkbox("Start a Search")):
                 user_input_prediction = user_input()
                 pred = regressor.predict(user_input_prediction)
                 error = 94784
-                st.write('Mean Absolute Error: ', int(error))
-                st.write('The Predicted Home Price is: $', int(pred), u"\u00B1",int(error))
+                if(st.button("Submit")):
+                    st.write('Mean Absolute Error: ', int(error))
+                    # st.write('The Predicted Home Price is: $', int(pred), u"\u00B1",int(error))
+                    txt = 'The Predicted Home Price is: $' + str(int(pred)) + ' \u00B1 $' + str(error)
+                    st.success(txt)
+
+                feedback = st.radio("Waka Waka value your feedback, please rate from 1-5, (5) being excellent:", ('Please choose from below','1','2','3','4','5'))
+                if feedback == 'Please choose from below':
+                    st.text('')
+                elif feedback == '1': 
+                    st.error("This option is not valid")
+                elif feedback == '2': 
+                    st.warning("We have tried our best!")
+                elif feedback == '3': 
+                    st.success("Thank you for your feedback.")
+                elif feedback == '4': 
+                    st.success("Glad you like it!")
+                elif feedback == '5':
+                    st.success("Waka Waka agrees with you. Have a nice day!")
         except:
             pass
 
-    elif(ml_model == "Coming Soon"):
-        text = "Coming Soon..."
-        i=0
-        while i < len(text):
-            st.text(text[i])
-            time.sleep(0.1)
-            i += 1
-
+    elif(ml_model == "Mutilple Linear Regression"):
+        score, y_predict= linearRegression(X_train, X_test, y_train, y_test)
+        txt = "Accuracy of Linear Regression Model is: " + str(round(score,2)) + "%. Proceed with caution" 
+        if(st.checkbox("Show Model Accuracy")):
+            st.warning(txt)
         
 
+        try:
+            if(st.checkbox("Start a Search")):
+                user_input_prediction = user_input()
+                pred = model.predict(user_input_prediction)
+                st.button("Submit")
+                    
+                    # txt = 'The Predicted Home Price is: $' + str(int(pred))
+                        # st.success(txt)
 
+        except:
+            pass
+
+
+
+    elif(ml_model == "Coming Soon"):
+        text = "Coming  Soon..."
+        i=0
+        while i < len(text):
+            st.write(text[i])
+            time.sleep(0.3)
+            i += 1
 
 
 if __name__ == "__main__":
