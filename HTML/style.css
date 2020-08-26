@@ -1,169 +1,203 @@
-style.css
-
-/* * {
-	box-sizing: border-box;
-  } */
-
-body{
-    background-color: #EDEDED; 
+body,
+html {
+  height: 100%;
 }
 
-p3 {
-	color: green;
-	font-size: 100px;
-	text-align: center;
+.img {
+  background-image: linear-gradient(
+      to bottom,
+      rgba(19, 19, 235, 0.5),
+      rgba(22, 96, 207, 0.735)
+    ),
+    url("seatle.jpg");
+  background-repeat: no-repeat;
+  background-size: auto;
+  background-size: 100% 100%;
+  position: fixed;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+  z-index: -1;
 }
 
-.navbar{
-    max-height: 50px; 
-	background-color: #577399;
-	font-size: 15px; 
+.title {
+  font-size: 40px;
+  text-align: center;
+  font-family: "Raleway", sans-serif;
+  color: rgb(255, 255, 255);
+  font-weight: 600;
 }
 
-.navigation .navbar-brand{
-	color: white; 
-	margin-left: 50px; 
-	padding: inherit; 
-	font-weight: bold; 
-	background-color: #011627;
-	font-family: Arial, serif;
-	border-radius: 8px;
+.title:hover {
+  transition: 0.5s;
+  color: yellow
+   /* #d80286 */
+   ;
 }
 
-.dropdown-item{
-    color: #30615c; 
+input[type="number"],
+select option {
+  background-color:lightgoldenrodyellow
+   /* #d80286 */
+   ;
+  color: black;
 }
 
-.dropdown-menu .dropdown-item:hover, .dropdown-menu .dropdown-item:active{
-    background-color:#adc7c4; 
+.sqft,
+.bath,
+.bhk,
+.loc {
+  color: #ffffff;
+  font-family: "Raleway", sans-serif;
+  font-size: 18px;
+  font-weight: 400;
+  line-height: 32px;
+  margin: 0 0 24px;
 }
 
-.nav-link:hover{
-    background-color:#adc7c4;
+.switch-field {
+  display: flex;
+  flex-direction: row;
+  margin-bottom: 36px;
+  overflow: hidden;
 }
 
-
-
-
-/* Media Queries */
-@media (max-width: 991.98px){
-.navbar-expand-lg{
-	background-color: #011627;
-}
-.navbar{
-    max-height: none; 
-    padding: inherit;
-}
-.navbar div{
-    margin: inherit; 
-    background-color: white;  
-}
-.navbar-brand{
-    padding: 10px; 
+.switch-field input {
+  position: absolute !important;
+  clip: rect(0, 0, 0, 0);
+  height: 1px;
+  width: 1px;
+  border: 0;
+  overflow: hidden;
 }
 
-button{
-	margin-left: auto; 
+.switch-field label {
+  background-color: white;
+  color: rgb(0, 0, 0);
+  font-size: 14px;
+  line-height: 1;
+  text-align: center;
+  padding: 8px 16px;
+  margin-right: -1px;
+  border: 1px solid rgba(0, 0, 0, 0.2);
+  box-shadow: inset 0 1px 3px rgba(0, 0, 0, 0.3), 0 1px rgba(255, 255, 255, 0.1);
+  transition: all 0.1s ease-in-out;
 }
 
-button:focus {
-    outline: 1px dotted;
-}
-}
-
-.description-content {
-	margin-top: 30px;
-	margin-bottom: 60px;
-	padding: 10px 30px 5px;
-	color: black;
-	background-color: white;
+.switch-field label:hover {
+  cursor: pointer;
 }
 
-.description-content2 {
-	height: 240%;
-	width: 240%;
-	color: black;
-	background-color: white;
+.switch-field input:checked + label {
+  background-color: lightgoldenrodyellow;
+  box-shadow: none;
 }
 
-.imageNav-content {
-	margin-top: 40px;
-	margin-bottom: 20px;
-	padding: 10px 30px 40px;
-	color: black;
-	background-color: white;
-}
-.description-header, .imageNav-header {
-	padding-top: 15px; 
-	padding-left: 4px;
-	color: #011627;
-	font-size: 28px;
-	font-weight: bold;
-	font-family: Arial;
+.switch-field label:first-of-type {
+  border-radius: 4px 0 0 4px;
 }
 
-img{
-	width: 100%;
-	height: 100%;
+.switch-field label:last-of-type {
+  border-radius: 0 4px 4px 0;
 }
 
-.description-image {
-	float: left;
-	width: 60%;
-	height: 60%;
+.form {
+  max-width: 370px;
+  font-family: "Raleway", sans-serif;
+  font-weight: normal;
+  text-align: right;
+  line-height: 1.625;
+  margin: 8px auto;
+  padding-left: 16px;
+  z-index: 2;
 }
 
-p{
-	color: #414d4a;
-	font-size: 18px;
-	font-family: Arial, Helvetica, sans-serif;
+h2 {
+  font-size: 18px;
+  margin-bottom: 0px;
+}
+.area {
+  font-family: "Raleway", sans-serif;
+  outline: 0;
+  width: 76%;
+  border: 0;
+  margin: 0 0 10px;
+  padding: 10px;
+  box-sizing: border-box;
+  font-size: 15px;
+  height: 35px;
+  border-radius: 5px;
 }
 
-
-.active, .imageNav-photo:hover{
-    border-color:#011627;
-    border-style: solid; 
+.location {
+  /* text-indent: 30%; */
+  width: 70%;
+  margin-left: 10px;
+  padding: 8px;
+  color: black;
+  background-color: lightgoldenrodyellow;
+  position: relative;
+  display: inline-block;
+  transform: scale(1.1);
 }
 
-.footer{
-	background-color: #495867; 
-    border-top-style: solid; 
-    border-top-width: 4px; 
-    border-top-color: #011627;
-    color: white; 
-    min-height: 50px; 
-    font-family: Arial, Helvetica, sans-serif;
-    font-size: 15px; 
-    text-align: center; 
-    position: fixed;
-    padding-top: 10px; 
-	width: 100%;
-	left: 0;
-	bottom: 0;
+.location:after {
+  transition: 0.2s;
+  position: absolute;
+  content: "";
+  top: 14px;
+  right: 10px;
+  width: 0;
+  height: 0;
+  border: 6px solid transparent;
+  border-color: #fff transparent transparent transparent;
 }
 
-a.button {
-    -webkit-appearance: button;
-    -moz-appearance: button;
-    appearance: button;
-
-    text-decoration: none;
-	color: initial;
+.submit {
+  margin-top: 20px;
+  width: 76%;
+  color: white;
+  border: 4px solid white;
+  border-radius: 25px;
+  padding: 18px 36px;
+  display: inline-block;
+  font-family: "Lucida Console", Monaco, monospace;
+  font-size: 14px;
+  letter-spacing: 1px;
+  cursor: pointer;
+  background-color: rgb(132, 24, 179);
+  box-shadow: inset 0 0 0 0 #d80286;
+  transition: ease-out 0.4s;
 }
 
-button {
-	background-color: #011627; 
-	border: none;
-	color: white;
-	padding: 15px 32px;
-	text-align: center;
-	text-decoration: none;
-	display: inline-block;
-	font-size: 20px;
-	border-radius: 8px;
-	width:200px;
+/* .submit:hover {
+  box-shadow: inset 400px 0 0 0 #d80286;
+} */
+
+.result {
+  background: lightgreen;
+  color: black;
+  width: 76%;
+  border: 0;
+  border: 2px solid darkblue;
+  margin: 25px 0 10px;
+  box-sizing: border-box;
+  font-size: 15px;
+  height: 60px;
+  text-align: center;
 }
 
-/* .button {
-	
-  } */
+.button {
+  background-color: lightgray;
+  border: none;
+  
+  color: yellow;
+  padding: 15px 32px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+  margin: 4px 2px;
+  cursor: pointer;
+}
