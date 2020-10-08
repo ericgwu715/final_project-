@@ -16,6 +16,15 @@ Data set details: The dataset includes house data from King County in US State o
 
 We developed the models using Multiple Linear Regression and Random Forest algorithms. We aim to predict the sales of houses with an accuracy of at least 75-80% and understand which factors are responsible for higher property value.
 
+## Tools used in this project: 
+* Python
+  * Pandas 
+  * Scikit-learn
+* Javascript
+* HTML/CSS 
+* Streamlit 
+* Tableau 
+
 ## Project Website
 
 Project Website is hosted on GitHub at the below link
